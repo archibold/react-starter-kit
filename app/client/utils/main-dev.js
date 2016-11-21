@@ -7,11 +7,11 @@ import DockMonitor from 'redux-devtools-dock-monitor';
 
 export const DevTools = createDevTools(
     <DockMonitor
-        toggleVisibilityKey="ctrl-h"
-        changePositionKey="ctrl-q">
+      toggleVisibilityKey="ctrl-h"
+      changePositionKey="ctrl-q"
+    >
         <LogMonitor theme="tomorrow" />
-    </DockMonitor>
-);
+    </DockMonitor>);
 
 export class Main extends React.Component {
 
@@ -34,13 +34,14 @@ export class Main extends React.Component {
 
     componentWillMount() {
         try {
-            var initialState = JSON.parse(sessionStorage.getItem('redux-devtools'));
+            /* eslint no-undef: 0*/
+            const initialState = JSON.parse(sessionStorage.getItem('redux-devtools'));
             this.setState(initialState || {});
         } catch (e) {
-            console.error('There are probems setting up the initial state');
+            // console.error('There are probems setting up the initial state');
         }
 
-        document.body.addEventListener('keyup', e => {
+        document.body.addEventListener('keyup', (e) => {
             if (
                 e.ctrlKey ||
                 e.altKey
@@ -51,7 +52,7 @@ export class Main extends React.Component {
                     case 68: // d
                         this.setState({ showDebug: !this.state.showDebug });
                         break;
-                    default: return;
+                    default:
                 }
             }
         });
@@ -62,13 +63,13 @@ export class Main extends React.Component {
     }
 
     render() {
-        var { showDebug } = this.state;
-        var { app, routes } = this.props;
+        const { showDebug } = this.state;
+        const { app, routes } = this.props;
 
         return (
             <Provider store={this.props.store}>
                 <div>
-                    {routes ? routes : React.createElement(app)}
+                    {routes || React.createElement(app)}
                     {showDebug ? <DevTools /> : null}
                 </div>
             </Provider>

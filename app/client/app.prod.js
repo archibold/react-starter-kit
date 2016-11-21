@@ -4,8 +4,6 @@
  */
 
 /* eslint no-process-env:0 */
-console.log('NODE_ENV:', process.env.NODE_ENV);
-
 require('./index.scss');
 
 import React from 'react';
@@ -18,7 +16,6 @@ import initialState from 'fixtures/initial-state-prod.fixture';
 import App from 'containers/App';
 
 export function start(targetEl, payload) {
-
     // apply the host's page payload
     if (payload.title) {
         initialState.app = {
@@ -27,11 +24,12 @@ export function start(targetEl, payload) {
     }
 
     // create the application Redux store
-    let appStore = makeStore(initialState);
+    const appStore = makeStore(initialState);
 
     ReactDOM.render((
         <Main
-            app={App}
-            store={appStore} />
+          app={App}
+          store={appStore}
+        />
     ), targetEl);
 }

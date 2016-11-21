@@ -1,14 +1,14 @@
 
-import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
+import { reducers } from 'reducers';
 
-import { reducers } from 'reducers';
 const reducer = combineReducers(reducers);
 
-var store;
+let store;
 
-export function makeStore(initialState = {}, middlewares = [reduxThunk]) {
-    var finalCreateStore = applyMiddleware(...middlewares)(createStore);
+export function makeStore(initialState = {}, middlewares = [reduxThunk]) {
+    const finalCreateStore = applyMiddleware(...middlewares)(createStore);
     store = finalCreateStore(reducer, initialState);
     return store;
 }

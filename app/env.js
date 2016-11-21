@@ -10,7 +10,7 @@
  * Production Settings
  */
 
-var APP_ENV = {
+let APP_ENV = {
     BASE_PATH: '/',
 };
 
@@ -30,10 +30,11 @@ if (process.env.NODE_ENV === 'development') {
  * (env.local.js is present)
  */
 
-var fs = require('fs');
-var path = require('path');
+const fs = require('fs');
+const path = require('path');
 
 if (fs.existsSync(path.join(__dirname, 'env.local.js'))) {
+    /* eslint global-require:0 */
     APP_ENV = require('./env.local');
 }
 

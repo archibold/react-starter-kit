@@ -1,13 +1,14 @@
 // Karma configuration
 // Generated on Tue Sep 15 2015 15:29:03 GMT+0200 (CEST)
 
-var webpack = require('webpack');
-var webpackConfig = require('./webpack.config.js');
+const webpack = require('webpack');
+const webpackConfig = require('./webpack.config.js');
+
 delete (webpackConfig.entry);
 delete (webpackConfig.output);
 
 // filter out unnecessary plugins
-webpackConfig.plugins = webpackConfig.plugins.filter(function (plugin) {
+webpackConfig.plugins = webpackConfig.plugins.filter((plugin) => {
     if (plugin instanceof webpack.HotModuleReplacementPlugin) {
         return false;
     }
@@ -20,7 +21,7 @@ webpackConfig.plugins = webpackConfig.plugins.filter(function (plugin) {
 webpackConfig.devtool = 'inline-source-map';
 webpackConfig.module.loaders[0].loaders = ['babel'];
 
-module.exports = function (config) {
+module.exports = (config) => {
     config.set({
 
         // base path that will be used to resolve all patterns (eg. files, exclude)

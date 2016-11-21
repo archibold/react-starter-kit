@@ -17,11 +17,11 @@ export class Main extends React.Component {
     }
 
     render() {
-        var { app, routes } = this.props;
+        const { app, routes } = this.props;
 
         return (
             <Provider store={this.props.store}>
-                {routes ? routes : React.createElement(app)}
+                {routes || React.createElement(app)}
             </Provider>
         );
     }

@@ -1,4 +1,4 @@
-# mix-gifts
+# sample-app
 
 > Starter kit to buid `React/Redux` based _Single Page Apps_.  
 > You can easily create new apps based on this project by using the

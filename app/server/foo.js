@@ -1,12 +1,11 @@
-
 /**
  * Register your development apis as router middlewars
  */
+const express = require('express');
 
-var express = require('express');
-var router = express.Router();
+const router = express.Router();
 
-router.get('/', function (req, res) {
+router.get('/', (req, res) => {
     res.send({ api: 'foo' });
 });
 

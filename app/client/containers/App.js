@@ -29,8 +29,7 @@ export default class App extends React.Component {
     }
 
     render() {
-
-        var reappUrl = 'https://github.com/marcopeg/generator-reapp';
+        const reappUrl = 'https://github.com/marcopeg/generator-reapp';
 
         return (
             <Grid style={STYLES.grid}>

@@ -1,11 +1,11 @@
 
-var path = require('path');
-var karmaConf = require('./karma.conf.js');
+const path = require('path');
+const karmaConf = require('./karma.conf.js');
 
-module.exports = function (config) {
+module.exports = (config) => {
     karmaConf(config);
 
-    var webpackConfig = config.webpack;
+    const webpackConfig = config.webpack;
 
     // -- doesn't really work yet
     // webpackConfig.module.postLoaders = [

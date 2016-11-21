@@ -1,10 +1,10 @@
 /* eslint no-process-env:0 */
 
-var path = require('path');
-var webpack = require('webpack');
-var config = require('./webpack.config');
-var appEnv = require('../app/env');
-var reappDevTools = require('reapp-dev-tools');
+const path = require('path');
+const webpack = require('webpack');
+const config = require('./webpack.config');
+const appEnv = require('../app/env');
+const reappDevTools = require('reapp-dev-tools');
 
 appEnv['process.env.NODE_ENV'] = '"production"';
 
@@ -34,8 +34,6 @@ config.resolve.alias = {
     'utils/main': 'utils/main-dist',
     'utils/store': 'utils/store-dist',
 };
-
-
 
 // remove development tools
 config.devtool = null;

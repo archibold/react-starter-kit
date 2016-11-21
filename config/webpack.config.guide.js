@@ -1,10 +1,10 @@
 
-var config = require('./webpack.config');
-var reappConf = require('./reapp.conf');
+const config = require('./webpack.config');
+const reappConf = require('./reapp.conf');
 
 config.entry = {
     guide: [
-        'webpack-dev-server/client?http://' + reappConf.host + ':' + reappConf.port,
+        `webpack-dev-server/client?http://${reappConf.host}:${reappConf.port}`,
         'webpack/hot/only-dev-server',
         './lib/styleguide',
     ],

@@ -1,16 +1,16 @@
 /* eslint no-process-env:0 */
 
-var path = require('path');
-var webpack = require('webpack');
-var appEnv = require('../app/env');
-var reappConf = require('./reapp.conf');
-var reappDevTools = require('reapp-dev-tools');
+const path = require('path');
+const webpack = require('webpack');
+const appEnv = require('../app/env');
+const reappConf = require('./reapp.conf');
+const reappDevTools = require('reapp-dev-tools');
 
 module.exports = {
     devtool: 'sourcemaps',
     entry: {
         app: [
-            'webpack-dev-server/client?http://' + reappConf.host + ':' + reappConf.port,
+            `webpack-dev-server/client?http://${reappConf.host}:${reappConf.port}`,
             'webpack/hot/only-dev-server',
             path.join(process.cwd(), 'app/client/app.dev'),
         ],
