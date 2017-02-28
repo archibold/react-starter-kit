@@ -1,7 +1,3 @@
-//
-// https://gist.githubusercontent.com/nkbt/9efd4facb391edbf8048/raw/36b94e329d9bf1a81e7b9a760ede9c413320d5ba/.eslintrc.js
-//
-
 {
     "parser" : "babel-eslint",
     "extends": "eslint-config-airbnb",
