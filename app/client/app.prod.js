@@ -16,20 +16,20 @@ import initialState from 'fixtures/initial-state-prod.fixture';
 import App from 'containers/App';
 
 export function start(targetEl, payload) {
-    // apply the host's page payload
-    if (payload.title) {
-        initialState.app = {
-            title: payload.title,
-        };
-    }
+  // apply the host's page payload
+  if (payload.title) {
+    initialState.app = {
+      title: payload.title,
+    };
+  }
 
-    // create the application Redux store
-    const appStore = makeStore(initialState);
+  // create the application Redux store
+  const appStore = makeStore(initialState);
 
-    ReactDOM.render((
-        <Main
-          app={App}
-          store={appStore}
-        />
-    ), targetEl);
+  ReactDOM.render((
+    <Main
+      app={App}
+      store={appStore}
+    />
+  ), targetEl);
 }

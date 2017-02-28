@@ -10,21 +10,21 @@ import { DevTools } from './main-dev';
 let store;
 
 export function makeStore(initialState = {}, middlewares = [reduxThunk]) {
-    /* eslint no-undef: 0*/
-    const persistParam = window.location.href.match(/[?&]debug_session=([^&]+)\b/);
+  /* eslint no-undef: 0*/
+  const persistParam = window.location.href.match(/[?&]debug_session=([^&]+)\b/);
 
-    const finalCreateStore = compose(
-        applyMiddleware(...middlewares),
-        DevTools.instrument(),
-        /* eslint global-require: 0*/
-        require('redux-devtools').persistState(persistParam),
-    )(createStore);
+  const finalCreateStore = compose(
+    applyMiddleware(...middlewares),
+    DevTools.instrument(),
+    /* eslint global-require: 0*/
+    require('redux-devtools').persistState(persistParam),
+  )(createStore);
 
-    store = finalCreateStore(reducer, initialState);
+  store = finalCreateStore(reducer, initialState);
 
-    return store;
+  return store;
 }
 
 export function dispatch(action) {
-    store.dispatch(action);
+  store.dispatch(action);
 }
