@@ -37,6 +37,6 @@ config.resolve.alias = {
 
 // remove development tools
 config.devtool = null;
-config.module.loaders[0].loaders = [];
+config.module.loaders[0].loaders = ['babel'];
 
 module.exports = config;
