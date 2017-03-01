@@ -2,11 +2,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-@connect(s => s.app)
+@connect(state => ({
+  title: state.app.title,
+}))
 export default class About extends React.Component {
+  static propTypes = {
+    title: React.PropTypes.string,
+    dispatch: React.PropTypes.func,
+  }
+
   render() {
+    const { title } = this.props;
     return (
-      <div>About page</div>
+      <div>About page, and title is still: {title}</div>
     );
   }
 }

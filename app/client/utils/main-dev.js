@@ -6,6 +6,8 @@ import LogMonitor from 'redux-devtools-log-monitor';
 import DockMonitor from 'redux-devtools-dock-monitor';
 import routes from 'utils/routes';
 
+import { syncHistoryWithStore } from 'react-router-redux';
+
 import { Router } from 'react-router';
 
 export const DevTools = createDevTools(
@@ -65,10 +67,11 @@ export class Main extends React.Component {
   render() {
     const { showDebug } = this.state;
     const { store, history } = this.props;
+    const newHistory = syncHistoryWithStore(history, store);
     return (
       <Provider store={store}>
         <div>
-          <Router history={history} routes={routes} />
+          <Router history={newHistory} routes={routes} />
           {showDebug ? <DevTools /> : null}
         </div>
       </Provider>
