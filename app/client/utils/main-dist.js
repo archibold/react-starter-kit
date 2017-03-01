@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Provider } from 'react-redux';
 
-import routes from 'utils/routes';
+import routes from 'routes';
 import { Router } from 'react-router';
 
 export class Main extends React.Component {

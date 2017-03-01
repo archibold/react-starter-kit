@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { createDevTools } from 'redux-devtools';
 import LogMonitor from 'redux-devtools-log-monitor';
 import DockMonitor from 'redux-devtools-dock-monitor';
-import routes from 'utils/routes';
+import routes from 'routes';
 
 import { Router } from 'react-router';
 
