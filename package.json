@@ -35,6 +35,7 @@
     "json-loader": "^0.5.x",
     "node-sass": "^3.4.x",
     "nodemon": "^1.11.x",
+    "pre-commit": "^1.2.2",
     "react": "^15.4.2",
     "react-addons-test-utils": "^15.4.2",
     "react-dom": "^15.4.2",
@@ -60,7 +61,6 @@
     "react-router-redux": "^4.0.8",
     "reapp-dev-tools": "0.2.x",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "webpack": "^1.12.x"
+    "react-dom": "^15.4.2"
   }
 }
