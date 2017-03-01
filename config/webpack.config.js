@@ -29,7 +29,7 @@ module.exports = {
     })),
   ],
   resolve: {
-    extensions: ['', '.js'],
+    extensions: ['', '.js', 'css'],
     modulesDirectories: [
       'node_modules',
       path.join(process.cwd(), 'app', 'client'),
@@ -55,7 +55,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader',
+        loader: 'style-loader!css-loader?modules=true',
       },
       {
         test: /\.scss$/,

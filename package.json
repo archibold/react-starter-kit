@@ -16,7 +16,7 @@
     "babel-core": "^5.8.x",
     "babel-eslint": "^4.1.8",
     "babel-loader": "^5.3.x",
-    "css-loader": "^0.23.x",
+    "css-loader": "^0.26.2",
     "eslint": "^3.10.2",
     "eslint-config-airbnb": "^13.0.0",
     "eslint-plugin-import": "^2.2.0",

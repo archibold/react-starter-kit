@@ -1,5 +1,6 @@
 
 import React from 'react';
+import styles from './Input.css';
 
 export class Input extends React.Component {
   static propTypes = {
@@ -21,7 +22,9 @@ export class Input extends React.Component {
 
     return (
       <div>
+        <p>SOME LABEL</p>
         <input
+          className={styles.container}
           defaultValue={value}
           placeholder={placeholder}
           onChange={(e) => { onChange(e.target.value); }}

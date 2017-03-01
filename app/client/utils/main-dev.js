@@ -67,11 +67,11 @@ export class Main extends React.Component {
   render() {
     const { showDebug } = this.state;
     const { store, history } = this.props;
-    const newHistory = syncHistoryWithStore(history, store);
+
     return (
       <Provider store={store}>
         <div>
-          <Router history={newHistory} routes={routes} />
+          <Router history={history} routes={routes} />
           {showDebug ? <DevTools /> : null}
         </div>
       </Provider>
