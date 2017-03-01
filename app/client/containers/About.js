@@ -8,7 +8,6 @@ import { connect } from 'react-redux';
 export default class About extends React.Component {
   static propTypes = {
     title: React.PropTypes.string,
-    dispatch: React.PropTypes.func,
   }
 
   render() {
