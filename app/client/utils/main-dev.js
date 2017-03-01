@@ -4,6 +4,9 @@ import { Provider } from 'react-redux';
 import { createDevTools } from 'redux-devtools';
 import LogMonitor from 'redux-devtools-log-monitor';
 import DockMonitor from 'redux-devtools-dock-monitor';
+import routes from 'utils/routes';
+
+import { Router } from 'react-router';
 
 export const DevTools = createDevTools(
   <DockMonitor
@@ -14,16 +17,13 @@ export const DevTools = createDevTools(
   </DockMonitor>);
 
 export class Main extends React.Component {
-
   static propTypes = {
-    app: React.PropTypes.func,
-    routes: React.PropTypes.object,
+    history: React.PropTypes.object,
     store: React.PropTypes.object,
   }
 
   static defaultProps = {
-    app: null,
-    routes: null,
+    history: null,
     store: null,
   }
 
@@ -64,12 +64,11 @@ export class Main extends React.Component {
 
   render() {
     const { showDebug } = this.state;
-    const { app, routes } = this.props;
-
+    const { store, history } = this.props;
     return (
-      <Provider store={this.props.store}>
+      <Provider store={store}>
         <div>
-          {routes || React.createElement(app)}
+          <Router history={history} routes={routes} />
           {showDebug ? <DevTools /> : null}
         </div>
       </Provider>

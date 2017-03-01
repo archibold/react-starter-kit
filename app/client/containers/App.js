@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 export default class App extends React.Component {
   render() {
     return (
-      <div>Hello world!<a href="/about">About</a></div>
+      <div>Hello world!<a href="about">About</a></div>
     );
   }
 }

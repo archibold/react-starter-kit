@@ -15,9 +15,12 @@ import { Main } from 'utils/main';
 import { makeStore } from 'utils/store';
 
 import initialState from 'fixtures/initial-state-dev.fixture';
-import App from 'containers/App';
+
+import { browserHistory } from 'react-router';
+import { syncHistoryWithStore } from 'react-router-redux';
 
 let appStore;
+let history;
 
 export function start(targetEl, payload) {
     // apply the host's page payload
@@ -27,11 +30,11 @@ export function start(targetEl, payload) {
 
   // build the app' store and reference it to the module
   appStore = makeStore(initialState);
-
+  history = syncHistoryWithStore(browserHistory, appStore);
   ReactDOM.render((
     <Main
-      app={App}
       store={appStore}
+      history={history}
     />
   ), targetEl);
 }

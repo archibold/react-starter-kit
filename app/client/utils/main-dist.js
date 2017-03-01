@@ -2,26 +2,26 @@ import React from 'react';
 
 import { Provider } from 'react-redux';
 
-export class Main extends React.Component {
+import routes from 'utils/routes';
+import { Router } from 'react-router';
 
+export class Main extends React.Component {
   static propTypes = {
-    app: React.PropTypes.func,
-    routes: React.PropTypes.object,
     store: React.PropTypes.object,
+    history: React.PropTypes.object,
   }
 
   static defaultProps = {
-    app: null,
-    routes: null,
     store: null,
+    history: null,
   }
 
   render() {
-    const { app, routes } = this.props;
+    const { store, history } = this.props;
 
     return (
-      <Provider store={this.props.store}>
-        {routes || React.createElement(app)}
+      <Provider store={store}>
+        <Router history={history} routes={routes} />
       </Provider>
     );
   }
