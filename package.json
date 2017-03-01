@@ -10,6 +10,9 @@
     "app": "npm run build && http-server ./dist -p 3000",
     "lint": "eslint ./"
   },
+  "pre-commit": [
+    "lint"
+  ],
   "author": "",
   "license": "MIT",
   "devDependencies": {
