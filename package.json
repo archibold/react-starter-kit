@@ -7,7 +7,7 @@
     "start": "NODE_ENV=development nodemon reapp.js",
     "build": "NODE_ENV=production node ./node_modules/webpack/bin/webpack --config config/webpack.dist.js",
     "build:dev": "NODE_ENV=development node ./node_modules/webpack/bin/webpack --config config/webpack.config.js",
-    "app": "npm run build && ./node_modules/http-server/bin/http-server ./dist",
+    "app": "npm run build && node server.js",
     "lint": "eslint ./"
   },
   "pre-commit": [
@@ -55,5 +55,6 @@
     "webpack-dev-server": "^1.14.x"
   },
   "dependencies": {
+    "express": "^4.13.x"
   }
 }
