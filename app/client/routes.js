@@ -11,7 +11,7 @@ const Routes = (
     <IndexRoute component={Content} />
     <Route path="about" component={About}>
       <IndexRoute component={NoMatch} />
-      <Route path="*" component={NoMatch} />
+      <Route path="dd" component={NoMatch} />
     </Route>
     <Route path="*" component={NoMatch} />
   </Route>
