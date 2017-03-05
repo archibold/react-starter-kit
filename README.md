@@ -9,7 +9,7 @@
 ```
 npm install
 ```
-    
+
 **NOTE:** this command will install the library that are essential to the execution of your app and _Styleguide_. If you plan to run quality tasks such linting and testing you'd better run the full install:
 
 ```
@@ -31,7 +31,7 @@ npm start
 ## Run the App - production
 
 You can run the application in _production mode_ (minified bundle, without development & debug facilities):
-    
+
 ```
 npm run app
 ```
@@ -48,6 +48,14 @@ npm start ComponentName
 
 > Use `yo reapp:component` to easily scaffold a new component and it's _Styleguide_ page.  
 > [more info here](https://github.com/marcopeg/generator-reapp)
+
+## Deploy to heroku
+
+```
+heroku login
+heroku create
+npm push heroku master
+```
 
 ## Run the Styleguide
 
@@ -66,7 +74,7 @@ npm run install:lint
 
 // through NPM interface (*)
 npm run lint
-    
+
 // or
 ./node_modules/eslint/bin/eslint.js ./
 ```
@@ -108,6 +116,3 @@ Then you can run:
 ```
 npm run cov
 ```
-
-
-
