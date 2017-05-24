@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 
 import { createDevTools } from 'redux-devtools';
@@ -18,8 +19,8 @@ export const DevTools = createDevTools(
 
 export class Main extends React.Component {
   static propTypes = {
-    history: React.PropTypes.object,
-    store: React.PropTypes.object,
+    history: PropTypes.object,
+    store: PropTypes.object,
   }
 
   static defaultProps = {

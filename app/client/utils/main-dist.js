@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { Provider } from 'react-redux';
 
@@ -7,8 +8,8 @@ import { Router } from 'react-router';
 
 export class Main extends React.Component {
   static propTypes = {
-    store: React.PropTypes.object,
-    history: React.PropTypes.object,
+    store: PropTypes.object,
+    history: PropTypes.object,
   }
 
   static defaultProps = {
