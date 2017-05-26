@@ -3,11 +3,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Input.css';
 
-export class Input extends React.Component {
+export default class Input extends React.Component {
   static propTypes = {
     onChange: PropTypes.func,
     placeholder: PropTypes.string,
     value: PropTypes.string,
+    label: PropTypes.string,
   }
 
   static defaultProps = {
@@ -19,11 +20,12 @@ export class Input extends React.Component {
       onChange,
       placeholder,
       value,
+      label,
     } = this.props;
 
     return (
       <div>
-        <p>SOME LABEL</p>
+        <p>{label}</p>
         <input
           className={styles.container}
           defaultValue={value}
